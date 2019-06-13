@@ -1,0 +1,12 @@
+body {
+  background-color: #87cefa;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  margin: 5px 15px 15px;
+  padding: inherit;
+}
+
+* {
+  box-sizing: border-box;
+}
