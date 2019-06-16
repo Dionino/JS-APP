@@ -1,5 +1,6 @@
 body {
   background-color: #87cefa;
+  color: #000;
   font-family: 'Raleway', sans-serif;
   font-weight: 400;
   font-size: 16px;
@@ -9,4 +10,8 @@ body {
 
 * {
   box-sizing: border-box;
+}
+
+.types {
+  color: green;
 }
