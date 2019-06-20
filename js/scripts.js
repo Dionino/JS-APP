@@ -10,10 +10,10 @@ var repository = [
   {name: "Blastoise", height: 5.03, types: ["Water"]}
 ];
 
-for (var i = 0; i < repository.length; i++) {
-  if (repository[i].height >= 6.07){
-    document.write(repository[i].name + ' (height: ' + repository[i].height + ') ' + '- Wow that\'s big!' + '<br>' + 'types: ' + repository[i].types + '<br>' + '<br>')
- }else {
-    document.write(repository[i].name + ' (height: ' + repository[i].height + ') ' + '<br>' + 'types: ' + repository[i].types + '<br>' + '<br>')
- }
-};
+repository.forEach(function(pokemonDetails){
+  if (pokemonDetails.height >= 6.07) {
+  document.write('name:' + ' ' + pokemonDetails.name + ', ' + '(height:' + ' ' + pokemonDetails.height + ') ' + '- Wow that\'s big!' + '<br>' + 'types:' + ' ' + pokemonDetails.types + '<br>' + '<br>')
+}else {
+  document.write('name:' + ' ' + pokemonDetails.name + ', ' + '(height:' + ' ' + pokemonDetails.height + ') ' + '<br>' + 'types:' + ' ' + pokemonDetails.types + '<br>' + '<br>')
+}
+});
