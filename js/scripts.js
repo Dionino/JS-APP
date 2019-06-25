@@ -11,7 +11,11 @@ var pokemonRepository = (function () {
   {name: "Blastoise", height: 5.03, types: ["Water"]}];
 
   function add(pokemon) {
-    return repository.push(pokemon);
+    if (typeof(pokemon) === 'object') {
+    repository.push(pokemon);
+  } else {
+    console.log('Please use the correct format: {name: "string", height: (number), types: ["string"]}');
+  }
   }
 
   function getAll() {
@@ -26,10 +30,13 @@ var pokemonRepository = (function () {
 
 var pokemonDetails = pokemonRepository.getAll();
 
-pokemonDetails.forEach(function(allPokemon){
-  if (allPokemon.height >= 6.07) {
-  document.write('name:' + ' ' + allPokemon.name + ', ' + '(height:' + ' ' + allPokemon.height + ') ' + '- Wow that\'s big!' + '<br>' + 'types:' + ' ' + allPokemon.types + '<br>' + '<br>')
-}else {
-  document.write('name:' + ' ' + allPokemon.name + ', ' + '(height:' + ' ' + allPokemon.height + ') ' + '<br>' + 'types:' + ' ' + allPokemon.types + '<br>' + '<br>')
-}
+var $Pokedex = document.querySelector('.Pokedex');
+
+pokemonDetails.forEach(function(ul){
+  var $listItem = document.createElement('li');
+  var $button = document.createElement('button');
+  $button.innerText = pokemonDetails.name;
+  $button.classList.add('pokemon_button');
+  $listItem.appendChild($button);
+  $Pokedex.appendChild($listItem);
 });

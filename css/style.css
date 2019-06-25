@@ -15,3 +15,15 @@ body {
 .types {
   color: green;
 }
+
+.pokemon_button {
+  border: none;
+  font-family: inherit;
+  background-color: #f00;
+  color: #000;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 3px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+  transition: 0.9s opacity;
+}
