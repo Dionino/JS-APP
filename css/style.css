@@ -17,13 +17,13 @@ body {
 }
 
 .pokemon_button {
-  border: none;
   font-family: inherit;
+  font-weight: bold;
   background-color: #f00;
   color: #000;
   text-decoration: none;
-  padding: 10px;
+  padding: 9px;
   border-radius: 3px;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
-  transition: 0.9s opacity;
+  border: 1px solid rgba(0, 0, 0);
+  margin-bottom: 1px;
 }

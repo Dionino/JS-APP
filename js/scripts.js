@@ -16,7 +16,7 @@ var pokemonRepository = (function () {
   } else {
     console.log('Please use the correct format: {name: "string", height: (number), types: ["string"]}');
   }
-  }
+};
 
   function getAll() {
       return repository;
@@ -32,11 +32,14 @@ var pokemonDetails = pokemonRepository.getAll();
 
 var $Pokedex = document.querySelector('.Pokedex');
 
-pokemonDetails.forEach(function(ul){
+pokemonDetails.forEach(function(pokemonDetails){
   var $listItem = document.createElement('li');
   var $button = document.createElement('button');
   $button.innerText = pokemonDetails.name;
   $button.classList.add('pokemon_button');
   $listItem.appendChild($button);
   $Pokedex.appendChild($listItem);
+  $button.addEventListener('click', function showDetails(pokemon) {
+    console.log(pokemonDetails.name);
+  })
 });
