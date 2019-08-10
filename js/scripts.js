@@ -10,6 +10,22 @@ var pokemonRepository = (function () {
   {name: "Wartortle", height: 3.03, types: ["Water"]},
   {name: "Blastoise", height: 5.03, types: ["Water"]}];
 
+function showDetails(pokemon) {
+  console.log(pokemon.name);
+};
+
+function addListItem(pokemon) {
+  var $listItem = document.createElement('li');
+  var $button = document.createElement('button');
+  $button.innerText = pokemon.name;
+  $button.classList.add('pokemon_button');
+  $listItem.appendChild($button);
+  $Pokedex.appendChild($listItem);
+  $button.addEventListener('click', function(event) {
+    console.log(pokemon.name);
+  })
+};
+
   function add(pokemon) {
     if (typeof(pokemon) === 'object') {
     repository.push(pokemon);
@@ -22,24 +38,19 @@ var pokemonRepository = (function () {
       return repository;
     }
 
+// Objects returning outside the IIFE
+
     return {
       add: add,
-      getAll: getAll
+      getAll: getAll,
+      addListItem: addListItem
     };
-})();
+})(); // IIFE ends here
 
 var pokemonDetails = pokemonRepository.getAll();
 
 var $Pokedex = document.querySelector('.Pokedex');
 
-pokemonDetails.forEach(function(pokemonDetails){
-  var $listItem = document.createElement('li');
-  var $button = document.createElement('button');
-  $button.innerText = pokemonDetails.name;
-  $button.classList.add('pokemon_button');
-  $listItem.appendChild($button);
-  $Pokedex.appendChild($listItem);
-  $button.addEventListener('click', function showDetails(pokemon) {
-    console.log(pokemonDetails.name);
-  })
+pokemonDetails.forEach(function(pokemon){
+  pokemonRepository.addListItem(pokemon);
 });
