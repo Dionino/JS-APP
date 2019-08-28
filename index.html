@@ -7,10 +7,29 @@
   <title>Dionino's Portfolio Website - Simple JS App</title>
 </head>
 <body>
+  <div id='modal-pokemon'>
+  <div class='modal'>
+  </div>
+</div>
   <h1>Pokédex</h1><br><br>
   <ul class="Pokedex">
 
   </ul>
+
+  <form id="register-form">
+    <div class="input-wrapper">
+      <label for="email">E-mail</label>
+      <input id="email">
+    </div>
+
+    <div class="input wrapper">
+      <label for="password">Password</label>
+      <input id="password" type="password">
+    </div>
+
+    <button>Register</button>
+  </form>
+
   <script src="js/polyfill.js"></script>
   <script src="js/fetch.umd.js"></script>
   <script src="js/scripts.js"></script>
