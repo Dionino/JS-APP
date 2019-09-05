@@ -39,6 +39,12 @@ body {
   text-align: left;
 }
 
+.modal-content {
+  border-radius: 5px;
+  border-width: 15px;
+  border-color: #000;
+}
+
 .modal-close {
   float: right;
   -webkit-appearance: none;
