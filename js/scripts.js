@@ -4,7 +4,7 @@ var pokemonRepository = (function () {
   var apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
   function showDetails(item) {
-    pokemonRepository.loadDetails(item).then(function () {
+    pokemonRepository.loadDetails(item).then(function (pokemon) {
       showModal(pokemon);
     })
   };
@@ -18,7 +18,7 @@ var pokemonRepository = (function () {
     $listItem.appendChild($button);
     $Pokedex.appendChild($listItem);
     $button.addEventListener('click', function(event) {
-      showModal(pokemon);
+      showDetails(pokemon);
     })
   };
 
@@ -52,7 +52,7 @@ var pokemonRepository = (function () {
 
   function loadDetails(item) {
     var url = item.detailsUrl;
-    return fetch(apiUrl).then(function (response) {
+    return fetch(url).then(function (response) {
       return response.json();
     }).then(function (details) {
       // Now we add the details to the item
